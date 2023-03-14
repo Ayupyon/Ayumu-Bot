@@ -1,0 +1,149 @@
+@font-face {
+    font-family: "SourceHanSans";
+    src: url("font/SourceHanSansCN-VF.ttf");
+}
+
+@font-face {
+    font-family: "NotoEmoji";
+    src: url("font/NotoColorEmoji.ttf");
+    unicode-range: U+1F000-1F644, U+203C-3299;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: "NotoEmoji", "SourceHanSans";
+    --font-color: #3e3d4b
+}
+
+#main {
+    width: 2296px;
+    height: 1080px;
+    background-image: url("image/background.png");
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+div.title {
+    align-self: flex-start;
+    height: 150px;
+}
+
+div.table {
+    align-self: center;
+    display: flex;
+    border: 5px solid #f2f1f7;
+    width: 2000px;
+    height: 800px;
+    background-color: #fcfcfe;
+    box-shadow: 2px 2px 2px 2px #ad9da7;
+}
+
+div.left {
+    flex: 30%;
+    display: flex;
+    align-items: center;
+}
+
+div.right {
+    flex: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+div.item {
+    margin-left: 100px;
+    display: flex;
+    align-items: center;
+}
+
+div.descriptor {
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+    border-bottom: 5px dotted #b6c4d1;
+    min-width: 600px;
+}
+
+div.tips {
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+}
+
+div.description {
+    align-self: flex-start;
+    color: #f48896;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+div.description + div {
+    align-self: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--font-color);
+}
+
+div.tips_text {
+    margin: 20px;
+    padding: 10px;
+    width: 1000px;
+    height: 300px;
+    background-color: #f5f4f9;
+}
+
+#user_info {
+    margin: 100px 20px 100px 100px;
+    border: 5px solid #f2f1f7;
+    box-shadow: 2px 2px 2px 2px #ad9da7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#title_image {
+    position: relative;
+    top: 45px;
+    left: 20px;
+}
+
+#title_text {
+    position: relative;
+    top: 30px;
+    left: -560px;
+    font-size: 40px;
+    color: var(--font-color);
+}
+
+#profile {
+    width: 600px;
+    margin: 15px 50px 10px 50px;
+    display: block;
+    height: auto;
+    border-radius: 50%;
+}
+
+#footer {
+    align-self: flex-end;
+    width: 400px;
+    margin-right: 20px;
+}
+
+/* #name {
+    align-self: flex-start;
+    margin-left: 200px;
+    color: #f48896;
+    font-family: "SourceHanSans";
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#name + div {
+    font-family: "SourceHanSans";
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--font-color);
+} */

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Ayumu bot daily check in</title>
+
+<link rel="stylesheet" href="check_in_style.css">
+
+</head>
+<body>
+
+    <div id="main">
+        <div class="title">
+            <img id="title_image" src="image/header.png", alt="title">
+            <span id="title_text">小步梦签到</span> 
+        </div>
+
+        <div class="table">
+            <div class="left">
+                <div id="user_info">
+                    <img id="profile" src="http://q2.qlogo.cn/headimg_dl?dst_uin={{ user_id }}&spec=5", alt="头像">
+                    <div class="descriptor" style="border-bottom:none;margin-bottom:15px;">
+                        <div class="description">用户名</div>
+                        <div>{{ user_name }}</div>
+                    </div>
+                </div>  
+            </div>
+            <div class="right">
+                <div class="item">
+                    <img src="image/token.png" alt="token" style="width:60px;">
+                    <div class="descriptor">
+                        <div class="description">签到口令</div>
+                        <div>{{ token }}</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="image/lovecastar.png" alt="lovecastar" style="width:60px;">
+                    <div class="descriptor">
+                        <div class="description">爱星数</div>
+                        <div>{{ star }}{{ star_delta }}</div>
+                    </div>
+                </div>
+                <div class="item" style="position:relative;left:-50px;">
+                    {% if checkin_days >= 20 and checkin_days < 50 %}
+                    <img src="image/checkin1.png" alt="checkin_img" style="width:160px;height:104px;">
+                    {% elif checkin_days >= 50 and checkin_days < 100 %}
+                    <img src="image/checkin2.png" alt="checkin_img" style="width:160px;height:104px;">
+                    {% elif checkin_days >= 100 %} 
+                    <img src="image/checkin3.png" alt="checkin_img" style="width:160px;height:104px;">
+                    {% else %}
+                    <div style="width:160px;height:60px;"></div> 
+                    {% endif %}
+                    <!-- <div style="width:60px;height:60px;"></div> -->
+                    <div class="descriptor">
+                        <div class="description">连续签到天数</div>
+                        <div>{{ checkin_days }}</div>
+                    </div>
+                </div>
+                <div id="tips">
+                    <div class="description">Tips:</div>
+                    <div class="tips_text">{{ tips }}</div>
+                </div>
+            </div>
+        </div>
+
+        <img src="image/footer.png" alt="footer" id="footer">
+    </div>
+
+</body>
+</html>
