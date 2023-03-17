@@ -5,14 +5,12 @@ from functools import cache
 from nonebot import get_driver
 
 
-ayumu_home: Path | None = None
+ayumu_home = Path(os.getcwd())
 driver = get_driver()
 
 
 @driver.on_startup
 async def init_home_path():
-    global ayumu_home
-    ayumu_home = Path(os.getcwd())
     if not os.path.exists(str(resource_path())):
         os.makedirs(str(resource_path()))
     if not os.path.exists(str(data_path())):

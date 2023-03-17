@@ -22,7 +22,7 @@ member_leave = on_type(GroupDecreaseNoticeEvent, priority=1)
 @member_welcome.handle()
 async def _(event: GroupIncreaseNoticeEvent):
     message = (MessageSegment.at(event.get_user_id()) +
-               "欢迎新大佬，这里是小步梦~\n您可以发送“使用帮助”查看小步梦支持的功能~")
+               "欢迎新大佬，这里是小步梦~")
     await member_welcome.finish(message)
 
 

@@ -142,7 +142,7 @@ dmypy.json
 .vscode
 
 # random picture content
-data/random_pictures/*
+data/*
 
 # database setting json file
 *.json
