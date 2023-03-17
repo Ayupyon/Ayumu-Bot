@@ -56,7 +56,7 @@ do_guess = on_message(rule=do_guess_rule, priority=10, permission=GROUP)
 
 @do_guess.handle()
 async def _(event: GroupMessageEvent):
-    player_answer = event.get_plaintext()
+    player_answer = event.get_plaintext().lower()
     player = await get_player(event.user_id)
     if await check_answer(player_answer, player.answer):
         await do_guess.send(MessageSegment.record(player.original))
