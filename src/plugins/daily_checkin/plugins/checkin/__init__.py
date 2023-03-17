@@ -77,7 +77,7 @@ async def get_img(bot: Bot, user: User, delta: int, tips: str) -> BytesIO:
         user_name=(await bot.get_stranger_info(user_id=user.id))["nickname"],
         token=(user.checkin_token if user.checkin_token is not None else "暂未设置口令"),
         star=user.star,
-        star_delta=f"{delta:+}" if delta != 0 else "",
+        star_delta=f"({delta:+})" if delta != 0 else "",
         checkin_days=user.checkin_days,
         tips=tips
     )
