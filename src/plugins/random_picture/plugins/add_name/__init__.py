@@ -15,7 +15,7 @@ async def _(args: Message=CommandArg()):
     if len(name) > 20:
         await add_name.send("这个名称太长啦！！", at_sender=True)
         return
-    _, create = PictureName.get_or_create(name=name)
+    _, create = await PictureName.get_or_create(name=name)
     if create:
         await add_name.send("添加成功~", at_sender=True)
     else:

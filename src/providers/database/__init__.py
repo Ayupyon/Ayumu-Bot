@@ -34,16 +34,20 @@ async def init_db():
     from src.plugins.song_guess.model import Song, SongAlias
     import json, asyncio
 
-    # async def add_alias(song: str, alias: str):
-    #     await SongAlias.create(song=song, alias=alias)
+    async def add_alias(song: str, alias: str):
+        await SongAlias.create(song=song, alias=alias)
 
+    # res = [
+    #     ["KAGAYAKI Don't forget!", ["KAGAYAKI Don't forget", "勿忘闪耀", "AS终章单曲"]],
+    #     ["Sugar Sugar Yummy Yummy Parfait", ["甜甜美味芭菲", "芭菲", "AS终章单曲cw"]]
+    # ]
     # with open("data.json", "r") as file:
     #     res = json.load(file)
-    #     for entry in res:
-    #         name, aliases = entry
-    #         await Song.create(song=name)
-    #         tasks = [add_alias(name, alias) for alias in aliases]
-    #         await asyncio.gather(*tasks)
+    # for entry in res:
+    #     name, aliases = entry
+    #     await Song.create(song=name)
+    #     tasks = [add_alias(name, alias) for alias in aliases]
+    #     await asyncio.gather(*tasks)
     # song = await Song.get(song="めっちゃGoing")
     # await song.delete()
     # s = await SongAlias.filter(song="めっちゃGoing")
